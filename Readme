@@ -1,0 +1,33 @@
+ReadMe.md
+
+run-analysis.R Objectives
+
+Create one R script called run_analysis.R that does the following:
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive activity names.
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The script operates under the assumption that it has in it's working directory the following files and folders:
+activity_labels.txt
+features.txt
+test/
+train/
+
+Script walkthrough:
+
+- Read the test and training files. y_test.txt, subject_test.txt, and x_test.txt
+- Combine the files into a data frame 
+- Read the features from features.txt and filter the data to ensure it only leaves features that are either standard deviations (“std()”) or  means (“mean()”).  A new set of data is created from the results of this filter. 
+- Read activity labels from activity_labels.txt.  Replace the numbers with the text.
+- Make column list - “subjects” and “label” at the start
+- Tidy the list by reeling only the alphanumeric characters. Convert the result to lower case.
+- Apply the column names to the data frame.
+- Create a new data frame by finding the mean for each combination of subject and label 
+- The final result is tidy.txt
+
+
+
+
